@@ -1,4 +1,4 @@
-package com.xebia.oauth2.config.user;
+package com.xebia.oauth2.user;
 /**
  * 
  */

@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.xebia.oauth2.config.repo.UserRepository;
-import com.xebia.oauth2.config.user.User;
+import com.xebia.oauth2.repo.UserRepository;
+import com.xebia.oauth2.user.User;
 
 
 

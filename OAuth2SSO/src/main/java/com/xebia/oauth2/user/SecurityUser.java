@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.xebia.oauth2.config.user;
+package com.xebia.oauth2.user;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,10 +20,8 @@ public class SecurityUser extends User implements UserDetails
 		{
 			this.setId(user.getId());
 			this.setUserId(user.getUserId());
-			this.setName(user.getName());
 			this.setEmail(user.getEmail());
 			this.setPasswd(user.getPasswd());
-			this.setDob(user.getDob());
 			this.setRoles(user.getRoles());
 			this.setActive(user.getActive());
 		}		
@@ -55,11 +53,6 @@ public class SecurityUser extends User implements UserDetails
 		return super.getUserId();
 	}
 
-	/*@Override
-	public boolean isAccountNonExpired() {
-		return super.getActive()!=null && super.getActive().equals("Y");
-	}*/
-	
 	@Override
 	public boolean isAccountNonExpired() {
 		return /*super.getActive()==null || "Y".equals(super.getActive())*/true;

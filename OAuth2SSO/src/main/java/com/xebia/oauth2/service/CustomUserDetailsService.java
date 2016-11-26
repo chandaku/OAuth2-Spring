@@ -9,8 +9,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.xebia.oauth2.config.user.SecurityUser;
-import com.xebia.oauth2.config.user.User;
+import com.xebia.oauth2.user.SecurityUser;
+import com.xebia.oauth2.user.User;
 
 
 @Component

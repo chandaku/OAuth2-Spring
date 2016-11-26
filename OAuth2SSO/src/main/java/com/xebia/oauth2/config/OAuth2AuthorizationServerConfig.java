@@ -23,7 +23,6 @@ import com.xebia.oauth2.tokenforgery.CustomTokenEnhancer;
 
 @Configuration
 @EnableAuthorizationServer
-@EnableResourceServer
 public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
 	private static final String RESOURCE_ID = "resource";
@@ -56,7 +55,7 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
          withClient("acme")
           .secret("secret")
           .authorizedGrantTypes(
-            "authorization_code","refresh_token","implicit" )
+            "authorization_code")
           .scopes("read","trust")
           .resourceIds(RESOURCE_ID)*/;
     }

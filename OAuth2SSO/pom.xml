@@ -6,7 +6,7 @@
 	<groupId>com.xebia.oauth2</groupId>
 	<artifactId>OAuth2SSO</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>OAuth2SSO</name>
 	<description>Demo project for Spring Boot</description>
