@@ -106,3 +106,18 @@ CREATE TABLE  `oauth`.`role_master` (
   `role_name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+insert into oauth_client_details
+(client_id, resource_ids, client_secret, scope, authorized_grant_types, web_server_redirect_uri,
+authorities, access_token_validity, refresh_token_validity, additional_information, autoapprove)
+values
+('guest_house_ac', 'resource', 'gh_secret', 'read,trust', 'authorization_code')
+,('guest_house_pwd', 'resource', 'gh_secret', 'read,trust', 'password');
+
+insert into oauth_client_details
+(client_id, resource_ids, client_secret, scope, authorized_grant_types,autoapprove,web_server_redirect_uri,authorities,additional_information)
+values
+('guest_house_ac', 'resource', 'gh_secret', 'read,trust', 'authorization_code,refresh_token','true','','','{}')
+,('guest_house_ac_false', 'resource', 'gh_secret', 'read,trust', 'authorization_code,refresh_token','false','','','{}')
+,('guest_house_pwd', 'resource', 'gh_secret', 'read,trust', 'password','true','','','{}');
+
