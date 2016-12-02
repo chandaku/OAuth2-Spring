@@ -51,7 +51,8 @@
   width:100%;
 }
 .buttonWrapper{
-  margin-left: 0;
+    margin: 0 auto;
+    float: inherit;
 }
 body{
   background-color: #142541 !important;
