@@ -1,5 +1,7 @@
 package com.xebia.oauth2.config;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,12 +12,18 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
+import com.xebia.oauth2.controller.CustomLogoutSuccessHandler;
 import com.xebia.oauth2.service.CustomUserDetailsService;
 
 @Configuration
 @EnableWebSecurity
 public class ServerSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	@Autowired
+	private DataSource dataSource;
  
 	@Autowired
 	private CustomUserDetailsService customUserDetailsService;
@@ -43,16 +51,17 @@ public class ServerSecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-    	http
-    	.authorizeRequests()
-    	.antMatchers("/login","/login/form**","/register","/oauth/revoke-token").permitAll() // #4
-    	.anyRequest().authenticated() // 7
-    	.and()
-    	.formLogin()  // #8
-    	.loginPage("/login/form") // #9
-    	.loginProcessingUrl("/login")
-    	.failureUrl("/login/form?error")
-    	.permitAll(); // #5
+        http.authorizeRequests()
+            .antMatchers("/login","/logout").permitAll()
+            .anyRequest().authenticated()
+            .and()
+            .formLogin().permitAll().and().csrf().disable();
+             http.logout().addLogoutHandler(new CustomLogoutSuccessHandler(tokenStore()));
+        
+    }
+    
+    public TokenStore tokenStore() {
+        return new JdbcTokenStore(dataSource);
     }
     
     @Bean

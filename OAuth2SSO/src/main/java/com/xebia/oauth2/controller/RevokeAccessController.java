@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/logout")
 public class RevokeAccessController {
 	
 	public class OAuthController {
 	    @Autowired
 	    private TokenStore tokenStore;
 
-	    @RequestMapping(value = "/oauth/revoke-token", method = RequestMethod.GET)
-	    @ResponseStatus(HttpStatus.OK)
+	    @RequestMapping(value = "/oauth/revoke-token", method = RequestMethod.POST)
 	    public void logout(HttpServletRequest request) {
 	        String authHeader = request.getHeader("Authorization");
 	        if (authHeader != null) {
