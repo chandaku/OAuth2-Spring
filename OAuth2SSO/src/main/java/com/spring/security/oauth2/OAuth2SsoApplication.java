@@ -1,4 +1,4 @@
-package com.xebia.oauth2;
+package com.spring.security.oauth2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

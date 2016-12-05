@@ -1,4 +1,4 @@
-package com.xebia.oauth2.config;
+package com.spring.security.oauth2.config;
 
 import javax.sql.DataSource;
 
@@ -19,7 +19,7 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
-import com.xebia.oauth2.tokenforgery.CustomTokenEnhancer;
+import com.spring.security.oauth2.tokenforgery.CustomTokenEnhancer;
 
 @Configuration
 @EnableAuthorizationServer

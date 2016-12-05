@@ -1,4 +1,4 @@
-package com.xebia.oauth2.filter;
+package com.spring.security.oauth2.filter;
 
 import java.io.IOException;
 

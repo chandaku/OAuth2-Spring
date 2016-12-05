@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.xebia.oauth2.config;
+package com.spring.security.oauth2.config;
 
 import java.util.Properties;
 

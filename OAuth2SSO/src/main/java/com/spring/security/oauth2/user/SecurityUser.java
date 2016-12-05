@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.xebia.oauth2.user;
+package com.spring.security.oauth2.user;
 
 import java.util.ArrayList;
 import java.util.Collection;

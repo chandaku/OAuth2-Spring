@@ -1,4 +1,4 @@
-package com.xebia.oauth2.config;
+package com.spring.security.oauth2.config;
 
 import javax.sql.DataSource;
 
@@ -16,8 +16,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
-import com.xebia.oauth2.controller.CustomLogoutSuccessHandler;
-import com.xebia.oauth2.service.CustomUserDetailsService;
+import com.spring.security.oauth2.controller.CustomLogoutSuccessHandler;
+import com.spring.security.oauth2.service.CustomUserDetailsService;
 
 @Configuration
 @EnableWebSecurity

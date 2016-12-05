@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.xebia.oauth2.service;
+package com.spring.security.oauth2.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,8 +9,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.xebia.oauth2.user.SecurityUser;
-import com.xebia.oauth2.user.User;
+import com.spring.security.oauth2.user.SecurityUser;
+import com.spring.security.oauth2.user.User;
 
 
 @Component

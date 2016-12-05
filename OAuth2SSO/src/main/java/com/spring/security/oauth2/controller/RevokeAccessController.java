@@ -1,4 +1,4 @@
-package com.xebia.oauth2.controller;
+package com.spring.security.oauth2.controller;
 
 import javax.servlet.http.HttpServletRequest;
 

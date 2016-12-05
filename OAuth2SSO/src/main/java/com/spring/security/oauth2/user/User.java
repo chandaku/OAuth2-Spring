@@ -1,4 +1,4 @@
-package com.xebia.oauth2.user;
+package com.spring.security.oauth2.user;
 /**
  * 
  */

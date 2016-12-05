@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.xebia.oauth2.service;
+package com.spring.security.oauth2.service;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.xebia.oauth2.repo.UserRepository;
-import com.xebia.oauth2.user.User;
+import com.spring.security.oauth2.repo.UserRepository;
+import com.spring.security.oauth2.user.User;
 
 
 
