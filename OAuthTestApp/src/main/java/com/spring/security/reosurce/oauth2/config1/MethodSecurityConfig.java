@@ -1,4 +1,4 @@
-package com.xebia.oauth2.config1;
+package com.spring.security.reosurce.oauth2.config1;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.expression.method.MethodSecurityExpressionHandler;

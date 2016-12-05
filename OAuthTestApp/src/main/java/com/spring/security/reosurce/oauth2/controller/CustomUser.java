@@ -1,4 +1,4 @@
-package com.xebia.oauth2.controller;
+package com.spring.security.reosurce.oauth2.controller;
 
 import java.util.Collection;
 

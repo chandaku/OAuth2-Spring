@@ -1,4 +1,4 @@
-package com.xebia.oauth2;
+package com.spring.security.reosurce.oauth2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
-import com.xebia.oauth2.config1.MethodSecurityConfig;
-import com.xebia.oauth2.config1.OAuth2ResourceConfig;
+import com.spring.security.reosurce.oauth2.config1.MethodSecurityConfig;
+import com.spring.security.reosurce.oauth2.config1.OAuth2ResourceConfig;
 
 @SpringBootApplication
 @EnableAutoConfiguration
