@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
@@ -51,13 +52,39 @@ public class ServerSecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-            .antMatchers("/login","/logout").permitAll()
+        	/*http.authorizeRequests()
+            .antMatchers("/login").permitAll()
+            .antMatchers("/logout").authenticated()
             .anyRequest().authenticated()
             .and()
-            .formLogin().permitAll().and().csrf().disable();
-             http.logout().addLogoutHandler(new CustomLogoutSuccessHandler(tokenStore()));
-        
+            .formLogin().permitAll().and().csrf().disable();*/
+        	
+        	 /*http.requestMatchers().
+        	 antMatchers("/oauth/token").
+        	 and().authorizeRequests();*/
+        	 
+        	// http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    	
+	    	 http
+	      	.authorizeRequests()
+	      	.antMatchers("/login","/login/form**").permitAll() // #4
+	      	.anyRequest().authenticated() // 7
+	      	.and()
+	      	.formLogin()  // #8
+	      	.loginPage("/login/form") // #9
+	      	.loginProcessingUrl("/login")
+	      	.failureUrl("/login/form?error")
+	      	.permitAll().and().csrf().disable();
+    	
+        	 http.logout().
+             clearAuthentication(true).
+             deleteCookies("JSESSIONID").
+             invalidateHttpSession(true).
+             logoutSuccessHandler(new CustomLogoutSuccessHandler(tokenStore()));
+        	 
+        	 // #5
+             
+             
     }
     
     public TokenStore tokenStore() {
