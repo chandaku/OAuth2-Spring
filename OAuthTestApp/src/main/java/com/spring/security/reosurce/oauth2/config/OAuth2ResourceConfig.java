@@ -1,4 +1,4 @@
-package com.spring.security.reosurce.oauth2.config1;
+package com.spring.security.reosurce.oauth2.config;
 import java.io.IOException;
 
 import javax.servlet.FilterChain;

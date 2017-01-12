@@ -22,11 +22,11 @@ class App extends React.Component {
   componentWillMount(){
     let url = window.location.search,
         code = url.slice(0,6),
-        codeURL = "http://192.168.1.244:9999/uaa/oauth/token",
+        codeURL = "http://192.168.1.244:9999/OAuth2-SSO/oauth/token",
         codeCompare = url.substring(6,url.length);
 
     if(code !== "?code="){
-      window.location="http://192.168.1.244:9999/uaa/oauth/authorize?client_id=acme&response_type=code&redirect_uri=http://192.168.2.246:8080";
+      window.location="http://localhost:9999/OAuth2-SSO/oauth/authorize?client_id=xke_auth_code&response_type=code&redirect_uri=http://localhost:8080";
     }else{
       // alert(codeCompare)
       let payload = {
@@ -41,7 +41,7 @@ class App extends React.Component {
               type: 'POST',
               data: payload,
               dataType: "json",
-              beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Basic YWNtZTpzZWNyZXQ=')},
+              beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Basic eGViaWFfeGtlOnhlYmlhX3hrZV9zZWNyZXQ=')},
               contentType: 'application/x-www-form-urlencoded',
               success: function(data){
                 console.log('data',data)

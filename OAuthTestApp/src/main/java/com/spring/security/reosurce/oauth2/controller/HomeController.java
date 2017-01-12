@@ -24,13 +24,13 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/adminresource")
-	@PreAuthorize("hasRole('ROLE_ADMIN') and #oauth2.hasScope('read') or (!#oauth2.isOAuth() and hasRole('ROLE_ADMIN'))")
+	@PreAuthorize("hasRole('ROLE_GH_ADMIN')")
 	public String adminResource(Principal user) {
 		return "{\"id\":\"" + user.getName() + "\",\"content\":\"Hello World\"}";
 	}
 	
 	@RequestMapping(value="/userresource", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
-	@PreAuthorize("hasRole('ROLE_USER') and #oauth2.hasScope('read') or (!#oauth2.isOAuth() and hasRole('ROLE_USER'))")
+	@PreAuthorize("hasRole('ROLE_GH_USER')")
 	public String userResource(Principal user) {
 		return "{\"id\":\"" + user.getName() + "\",\"content\":\"Hello World\"}";
 	}

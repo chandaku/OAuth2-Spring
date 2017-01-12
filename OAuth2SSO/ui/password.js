@@ -22,7 +22,7 @@ class App extends React.Component {
   componentWillMount(){
     let url = window.location.search,
         code = url.slice(0,5),
-        codeURL = "http://192.168.1.244:9999/uaa/oauth/token",
+        codeURL = "http://192.168.1.244:9999/OAuth2-SSO/oauth/token",
         codeCompare = url.substring(6,url.length);
           let payload = {
                           "grant_type": "password",
@@ -33,7 +33,7 @@ class App extends React.Component {
                       url: codeURL,
                       type: 'POST',
                       data: payload,
-                      beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Basic Y2xpZW50SWRQYXNzd29yZDpzZWNyZXQ=')},
+                      beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Basic eGViaWFfeGtlOnhlYmlhX3hrZV9zZWNyZXQ=')},
                       contentType: 'application/x-www-form-urlencoded',
                       success: function(data){
                         console.log('data',data);

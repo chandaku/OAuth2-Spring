@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
-import com.spring.security.reosurce.oauth2.config1.MethodSecurityConfig;
-import com.spring.security.reosurce.oauth2.config1.OAuth2ResourceConfig;
+import com.spring.security.reosurce.oauth2.config.MethodSecurityConfig;
+import com.spring.security.reosurce.oauth2.config.OAuth2ResourceConfig;
 
 @SpringBootApplication
 @EnableAutoConfiguration
